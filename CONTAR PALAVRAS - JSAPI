@@ -1,0 +1,14 @@
+function contarPalavrasUnicas(texto) {
+  let contagem = {};
+  let text = texto.toLowerCase().replace(/[!,?;:]/g, "").split(" ");
+  text.forEach(palavra => {
+      if (contagem[palavra]) {
+          contagem[palavra]++;
+      } else {
+          contagem[palavra] = 1;
+      }
+  });
+  return contagem;
+}
+let texto = "mel e chata mel e legalzinha mel e amiga da lizzie";
+console.log(contarPalavrasUnicas(texto));
